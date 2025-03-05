@@ -1,6 +1,6 @@
-/* bento Main container Strat */
+/* bento container styling start */
 .bento-container {
-    height: 150vh;
+    height: auto;
     padding: 10px 0px 10px 0px;
 }
 .bento-container-center {
@@ -9,7 +9,7 @@
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows:  100px 100px 100px 100px 100px 100px 100px;
+    grid-template-rows:  repeat(9,  100px);
 }
 .bento-container-center div {
     border-radius: var(--primary-radius);
@@ -78,7 +78,7 @@
 .education-list .school .year {
     float: right;
 }
-.education-list .underline {
+.education-list .underline, .project-list .underline {
     background-color: #b1b1b1;
     width: 80%;
     height: 2px;
@@ -90,7 +90,155 @@
 }
 .project-list {
     background-color: var(--secondary-bg-color);
-    grid-row: 6 / 8;
+    grid-row: 6 / 10;
     grid-column: 1 / 3;
 }
+.project {
+    margin-top: 10px;
+}
+.project .para {
+    font-size: 15px;
+}
+.project a {
+    color: black;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.project a:hover {
+    text-decoration: none;
+}
+.skills {
+    background-color: var(--secondary-bg-color);
+    grid-column: -4 / -1;
+    grid-row: 8 / 10;
+}
+.skill-list {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.skill-list:before, .skill-list:after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 150px;
+    z-index: 2;
+}
+.skill-list .track {
+    display: flex;
+    animation: scroll 15s linear infinite;
+}
+.skill-list .skill:nth-child(1-4) {
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.skill-list .skill img {
+    height: 90px;
+}
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
 /* Projects list add cheyali */
+@media screen and (max-width: 767px) {
+    .bento-container{
+        width: 100%;
+        height: auto;
+        transform: translateY(-80px) !important;
+        transition: 0.3s all ease-in-out;
+    }
+    .bento-container-move {
+        transition: 0.3s all ease-in-out;
+        transform: translateY(0px);
+    }
+    .bento-container-center {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        gap: 0px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows:  repeat(12, 150px);
+    }
+    .bento-container-center div{
+        margin-bottom: 10px;
+    }
+    .about {
+        grid-column: 1 / 6;
+        grid-row: 1 / 3;
+    }
+    .about .para {
+        margin-top: 15px;
+        padding-right: 0px;
+        font-size: 13px;
+        font-weight: 400;
+    }
+    .mypic {
+        grid-column: 1 / 3;
+        grid-row: 3 / 4;
+    }
+    .linkedin {
+        grid-row: 4 / 5;
+    }
+    .github {
+        grid-row: 4 / 5;
+        margin-left: 10px;
+    }
+    .education {
+        grid-column: 1 / 3;
+        grid-row: 5 / 8;
+    }
+    .education-list {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+    .header {
+        margin-left: 0px;
+        padding: 0px;
+        font-size: 16px;
+    }
+    .education-list .school p {
+        color: var(--secondary-color);
+        text-transform: capitalize;
+        font-size: 12px;
+    }
+    .education-list .school .year {
+        float: right;
+    }
+    .project-list {
+        grid-column: 1 / 3;
+        grid-row: 8 / 11;
+    }
+    .project .para {
+        font-size: 13px;
+    }
+    .skills {
+        grid-column: 1 / 3;
+        grid-row: 11 / 13;
+    }
+    .skill-list {
+        margin-top: 30px;
+    }
+}
+/* @media (orientation: landscape) {
+    body {
+        width: 100%;
+        height: 110vh;
+        background-image: url(../assests/landscape-mode.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    nav, aside, div {
+        display: none;
+    }
+} */
+/* bento container styling end */
