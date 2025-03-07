@@ -242,3 +242,39 @@
     }
 } */
 /* bento container styling end */
+
+/* contact styling start */
+.contact, .follow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+.contact-btn {
+    padding: 20px;
+    border-radius: var(--primary-radius);
+    transition: 0.2s all ease-in-out;
+}
+.contact-btn img {
+    width: 200px;
+    height: 200px;
+}
+.contact .contact-btn:nth-child(1) {
+    background-color: #5dbe91;
+}
+.contact .contact-btn:nth-child(2) {
+    background-color: #dfa087;
+}
+.contact .contact-btn:nth-child(1):hover {
+    background-color: #337a59;
+    transform: translateY(-10px);
+    box-shadow: 0px 5px 10px 5px #a3a3a3;
+}
+.contact .contact-btn:nth-child(2):hover {
+    background-color: #b45a37;
+    transform: translateY(-10px);
+    box-shadow: 0px 5px 10px 5px #a3a3a3;
+}
+/* contact styling end */
